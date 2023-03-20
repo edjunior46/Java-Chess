@@ -9,11 +9,14 @@ import chess.Color;
 
 public class UI {
 
-    // https://stackoverflow.com/questions/5762491/how-to-print-color-in-console-using-system-out-println
-
 	public static final String ANSI_RESET = "\u001B[0m";
 	public static final String ANSI_YELLOW = "\u001B[33m";
 	public static final String ANSI_BLUE = "\u001B[34m";
+
+    public static void clearScreen() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
 
     public static ChessPosition readChessPosition(Scanner sc) {
 
@@ -26,7 +29,7 @@ public class UI {
         } catch(RuntimeException e) {
             throw new InputMismatchException("Error reading ChessPosition. Valid values are from a1 to h8.");
         }
-        
+
     }
 
     public static void printBoard(ChessPiece[][] pieces) {
