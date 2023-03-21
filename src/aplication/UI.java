@@ -16,6 +16,7 @@ public class UI {
 	public static final String ANSI_RESET = "\u001B[0m";
 	public static final String ANSI_YELLOW = "\u001B[33m";
 	public static final String ANSI_BLUE = "\u001B[34m";
+    public static final String ANSI_RED = "\u001B[31m";
     public static final String ANSI_GREEN_BACKGROUND = "\u001B[42m";
 
     public static void clearScreen() {
@@ -58,6 +59,9 @@ public class UI {
         System.out.println();
         System.out.println("Turn: " + chessMatch.getTurn());
         System.out.println("Waiting player: " + chessMatch.getPlayer());
+        if (chessMatch.getCheck()) {
+            System.out.println(ANSI_RED + chessMatch.getPlayer() + " in Check!" + ANSI_RESET);
+        }
     }
 
     public static void printBoard(ChessPiece[][] pieces, boolean[][] possibleMoves) {
