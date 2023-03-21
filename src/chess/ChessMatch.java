@@ -163,6 +163,7 @@ public class ChessMatch {
         placeNewPiece('e', 1, new King(board, Color.WHITE));
         placeNewPiece('d', 1, new Queen(board, Color.WHITE));
         placeNewPiece('f', 4 , new Knight(board, Color.WHITE));
+        placeNewPiece('d', 3, new Bishop(board, Color.WHITE));
 
         placeNewPiece('a', 8, new Rook(board, Color.BLACK));
         placeNewPiece('e', 8, new King(board, Color.BLACK));
